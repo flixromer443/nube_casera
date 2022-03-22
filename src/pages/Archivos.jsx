@@ -1,8 +1,10 @@
 import * as React from 'react';
+import EmptyFiles from '../components/childrens/EmptyFiles';
+
 function Archivos(){
    return(
-        <div>
-            <h1>archivos</h1>
+        <div style={{marginTop:300}}>
+            <EmptyFiles/>
         </div>
    );   
 }

@@ -5,18 +5,21 @@ import Home from './pages/Home';
 import { Route, Routes } from 'react-router';
 import Archivos from './pages/Archivos';
 import Fotos from './pages/Fotos';
+import AddButton from './components/childrens/AddButton';
+import { Container } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <NavBar/>
       <header className="App-header">
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/archivos' element={<Archivos/>} />
           <Route path='/fotos' element={<Fotos/>} />
-        </Routes>
+        </Routes> 
         
+
       </header>
       <BottomNavBar/>
     </div>
