@@ -7,6 +7,8 @@ import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
+import { useSelector } from 'react-redux';
+import LoginForm from './LoginForm';
 
 const actions = [
   { icon: <FileCopyIcon />, name: 'Copy' },
@@ -16,9 +18,14 @@ const actions = [
 ];
 
 export default function AddButton() {
+  const datos=useSelector(state=>state.NameOfPage)
+  const display=datos.displayAddButton
+  const data2=useSelector(state=>state.SesionReducer)
+    const session=data2.session
   return (
-    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
-      <SpeedDial
+    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, }}>
+      {!session&&<LoginForm/> }
+      {display&&<SpeedDial
         ariaLabel="SpeedDial basic example"
         sx={{ position: 'absolute', bottom: 16, right: 16 }}
         icon={<SpeedDialIcon />}
@@ -30,7 +37,7 @@ export default function AddButton() {
             tooltipTitle={action.name}
           />
         ))}
-      </SpeedDial>
+      </SpeedDial>}
     </Box>
   );
 }

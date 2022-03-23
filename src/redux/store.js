@@ -1,8 +1,10 @@
-import { configureStore,combineReducers,createStore } from '@reduxjs/toolkit'
+import {combineReducers,createStore } from '@reduxjs/toolkit'
 import NameOfPage from './reducers/NameOfPage';
-
+import SesionReducer from './reducers/SesionReducer';
 const reducer=combineReducers({
-    NameOfPage    
+    NameOfPage,
+    SesionReducer
+       
 })
 
 
