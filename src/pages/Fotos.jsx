@@ -1,9 +1,14 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import EmptyPhotos from '../components/childrens/EmptyPhotos';
 function Fotos(){
+  const data2=useSelector(state=>state.SesionReducer)
+  const session=data2.session
    return(
     <div style={{marginTop:300}}>
+       {session&&
         <EmptyPhotos/>
+       }
    </div>
    );   
 
